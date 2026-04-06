@@ -10,7 +10,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/teja1612-fr/ansible-jenkins.git'
+                git branch: 'main', url: 'https://github.com/teja1612-fr/ansible-jenkins.git'
             }
         }
 
