@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        INVENTORY = 'inventory.ini'
-        PLAYBOOK = 'playbook.yml'
-    }
-
     stages {
 
         stage('Checkout Code') {
@@ -18,8 +13,8 @@ pipeline {
             steps {
                 ansiblePlaybook(
                     credentialsId: 'ansible-key',
-                    inventory: "${INVENTORY}",
-                    playbook: "${PLAYBOOK}",
+                    inventory: 'inventory.ini',
+                    playbook: 'playbook.yml',
                     disableHostKeyChecking: true
                 )
             }
